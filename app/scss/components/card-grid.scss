@@ -1,0 +1,25 @@
+@use '../util/' as *;
+.card-grid{
+  display: grid;
+  grid-template-areas: 
+  "sub icon"
+  "num per";
+  padding:2rem 1.5rem;
+
+  .card__subtitle{
+    grid-area: sub;
+  }
+  .card__icon{
+    grid-area: icon;
+    margin-left: auto;
+  }
+  .card__count{
+    margin-right: auto;
+    grid-area: num;
+  }
+  .card__change{
+    grid-area: per;
+    margin-left: auto;
+    width: auto;
+  }
+}

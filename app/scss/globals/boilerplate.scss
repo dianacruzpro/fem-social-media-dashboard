@@ -1,0 +1,50 @@
+@media (prefers-reduced-motion: reduce) {
+  * {animation: none;transition: none;}
+}
+
+*, *::before,*::after{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  vertical-align: baseline;
+}
+
+img,
+picture,
+video,
+iframe,
+figure {
+  max-width: 100%;
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center center;
+}
+
+html{scroll-behavior: smooth;}
+
+table,tr,td {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+svg {
+  width: 100%;
+  display: block;
+  fill: currentColor;
+}
+
+body {
+  max-width: 100%;
+  // min-height: 100vh;
+  font-size: 100%;
+  font-family: var(--font-inter);
+  color:var(--color-text-2);
+  background: var(--bg);
+  line-height: 1.4em; 
+  font-smooth: always; 
+  --webkit-font-smoothing: antialiased;
+  --moz-osx-font-smoothing: grayscale;
+  transition: .5s ease-in-out;
+}

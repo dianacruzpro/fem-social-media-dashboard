@@ -1,0 +1,65 @@
+@use '../util/' as *;
+
+.toggle{
+  
+  label{
+    transition: .5s ease-in-out;
+    font-size: rem(14);
+    font-weight: 700;
+    color: var(--color-text-1);
+    cursor: pointer;
+    @include breakpoint-down(small){
+      font-size: rem(16);
+    }
+  }
+  &__wrapper{
+    @include flexbox(row, nowrap, center, center);
+    height: rem(30);
+    width: 3.875rem;
+    min-width: 3.875rem;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: .5s ease-in-out;
+    #light:checked ~ .toggle__button {
+      left: calc(100% - rem(26));
+      right: rem(3);
+    }
+    #light:checked ~ .toggle__background {
+      background: var(--toggle);
+    }
+    #dark:checked ~ .toggle__button {
+      left: rem(3);
+      right: calc(100% - rem(26));
+    }
+  }
+  &__background{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: rem(15);
+    z-index: -1;
+    background: linear-gradient(225deg, var(--toggle) -10%, var(--toggle-end) 0%, var(--toggle-start) 100%);
+    pointer-events: none;
+  }
+  input[type='radio']{
+    margin: 0;
+    opacity: 0;
+    width: rem(30);
+    height: rem(30);
+    cursor: pointer;
+  }
+  &__button{
+    position: absolute;
+    left: rem(3);
+    top: rem(3);
+    width: rem(23);
+    height: rem(23);
+    border-radius: 50%;
+    background-color: var(--bg);
+    transition: .35s ease-in-out;
+  }
+  
+}

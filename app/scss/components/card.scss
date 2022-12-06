@@ -1,0 +1,95 @@
+@use '../util/' as *;
+.cards{
+  @include flexbox(row, wrap, space-evenly, center,2rem);
+}
+.card{
+  min-width: 15.625rem;
+  border-radius: .3rem;
+  @include breakpoint-down(small){
+    min-width: 100%;
+  }
+  background: var(--bg-card);
+  color: var(--color-text-1);
+  @include flexbox(column, nowrap, space-between, center,2rem);
+  padding: 1.25rem 0;
+  transition: .4s ease-in-out;
+  cursor: pointer;
+
+  &:hover{
+    background: var(--card-hover);
+    backdrop-filter: blur(5rem);
+    box-shadow: 0 0 10px 2px rgba($color: #000000, $alpha: .3);
+  }
+
+  &--facebook{
+    border-top: .25rem solid var(--facebook);
+  }
+  &--twitter{
+    border-top: .25rem solid var(--twitter);
+  }
+  &--instagram{
+    position: relative;
+    overflow: hidden;
+    &::before{
+      content: '';
+      height: .25rem;
+      width: 100%;
+      top: 0;
+      position: absolute;
+      background: linear-gradient(to right, var(--instagram-start) 0%, var(--instagram-end) 60%);
+    }
+  }
+  &--youtube{
+    border-top: .25rem solid var(--youtube);
+  }
+  &__platform{
+    @include flexbox(row, nowrap, center, center,.625rem);
+  }
+  &__icon{
+    &--svg{
+      width: 1.6rem;
+    }
+  }
+  &__username{
+    font-size: .875rem;
+    font-weight: 700;
+  }
+  &__count{
+    text-align: center;
+    color: var(--color-text-2);
+    font-weight: 700;
+    &--big{
+      font-size: 2.8125rem;
+    }
+    &--small{
+      font-size: 2rem;
+    }
+  }
+  &__label{
+    font-size: 1rem;
+    letter-spacing: .2rem;
+    color: var(--color-text-1);
+    font-weight: 400;
+    margin-top: .8rem;
+  }
+  &__change{
+    width: 100%;
+    @include flexbox(row, nowrap, center, center,.3rem);
+    font-size: .9rem;
+    font-weight: 700;
+    img{
+      max-width: .65rem;
+    }
+    &--up{
+      color: var(--lime-green);
+    }
+    &--down{
+      color: var(--bright-red);
+    }
+  }
+
+  &__subtitle{
+    font-size: .875rem;
+    font-weight: 700;
+  }
+}

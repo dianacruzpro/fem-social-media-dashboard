@@ -1,0 +1,16 @@
+@use '../util/' as *;
+
+.container{
+  max-width: rem(1110);
+  padding: 0 rem(25);
+  margin: 0 auto rem(45);
+
+  @include breakpoint(large){
+    padding: 0;
+  }
+
+  &__subtitle{
+    margin-bottom: 2rem;
+    font-weight: 700;
+  }
+}
